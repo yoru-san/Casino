@@ -18,6 +18,11 @@ function machineASous(){
         var d = Math.floor(Math.random()*4);
         console.log("D = "+d);
         
+        document.getElementById("img1").src = "image/img_" + a + ".png";
+        document.getElementById("img2").src = "image/img_" + b + ".png";
+        document.getElementById("img3").src = "image/img_" + c + ".png";
+        document.getElementById("img4").src = "image/img_" + d + ".png";
+        
         if (a == b && a ==c && a==d){
             
             credit += 5
@@ -33,3 +38,10 @@ function machineASous(){
     
     //document.getElementById("credit").value = prompt();
 }
+var rand = Math.floor(Math.random()*4);
+console.log(rand);
+
+document.getElementById("img1").src = "image/img_" + rand + ".png";
+document.getElementById("img2").src = "image/img_" + rand + ".png";
+document.getElementById("img3").src = "image/img_" + rand + ".png";
+document.getElementById("img4").src = "image/img_" + rand + ".png";
