@@ -25,4 +25,10 @@ body {
     width: 600px;
     height: 250px;
     background: white;
+    opacity: 0.90;
+}
+
+.site
+{
+    color: white;
 }
