@@ -5,6 +5,8 @@
   <title> Casino en ligne </title>
   <link rel="stylesheet" href="style.css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -13,29 +15,33 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 <body>
-    
-<div class = "site" align="center">
+
+  <div class = "site" align="center">
     <p>www.casino-en-ligne.fr</p>
- </div>
-    
- <div class ="main" align="center">
-     
+  </div>
+
+  <div class ="main" align="center">
+
     <div class=carre>
-        <h1>La machine à sous !</h1>
-     
-        <button type="button" onclick="machineASous();" id="boutonStart" class="btn btn-default">Jouer</button><br><br>
-        <p>Crédits : <input id="credit" type="text" value=20 disabled="disabled"></p>
-        <img id="img1" src="image/img_3.png" /><img id="img2" src="image/img_3.png" /><img id="img3" src="image/img_3.png" /><img id="img4" src="image/img_3.png"/>
-        
+      <h1>La machine à sous !</h1>
+
+      <button type="button" onclick="machineASous();" id="boutonStart" class="btn btn-default">Jouer</button><br><br>
+      <p>Crédits : <input id="credit" type="text" value=20 disabled="disabled"></p>
+      <img id="img1" src="image/img_3.png" /><img id="img2" src="image/img_3.png" /><img id="img3" src="image/img_3.png" /><img id="img4" src="image/img_3.png"/>
+
     </div>
   </div>
-    
-    <script src="js/animation.js"></script>
-    <script src="js/script.js"></script>
-    <script>
-        init();
-    </script>
+
+  <script src="js/animation.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+  init();
+  </script>
 
 </body>
