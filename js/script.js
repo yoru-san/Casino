@@ -33,8 +33,12 @@ function machineASous(){
             credit += 3
         }
         
-        setTimeout(function(){
+        setTimeout(function(){ //actualisation
             document.getElementById("credit").value = credit;
+            document.getElementById("img1").src = "image/img_" + a + ".png";
+            document.getElementById("img2").src = "image/img_" + b + ".png";
+            document.getElementById("img3").src = "image/img_" + c + ".png";
+            document.getElementById("img4").src = "image/img_" + d + ".png";
         }, 2000);
     }
     
