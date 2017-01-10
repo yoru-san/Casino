@@ -1,48 +1,44 @@
 function machineASous(){
 
-    var credit = document.getElementById("credit").value;
+  var credit = document.getElementById("credit").value;
 
-    if (credit > 0){
+  if (credit > 0){
 
-        credit -= 1;
-        toastr["error"]("-1 Crédit");
-        document.getElementById("credit").value = credit;
+    credit -= 1;
+    toastr["error"]("-1 Crédit");
+    document.getElementById("credit").value = credit;
 
-        document.getElementById("boutonStart").disabled = true;
-        animationRoulette();
+    document.getElementById("boutonStart").disabled = true;
+    animationRoulette();
 
+    var a = Math.floor(Math.random()*4);
+    var b = Math.floor(Math.random()*4);
+    var c = Math.floor(Math.random()*4);
+    var d = Math.floor(Math.random()*4);
 
-        var a = Math.floor(Math.random()*4);
-        var b = Math.floor(Math.random()*4);
-        var c = Math.floor(Math.random()*4);
-        var d = Math.floor(Math.random()*4);
+    setTimeout(function(){ //actualisation
 
-        setTimeout(function(){ //actualisation
+      document.getElementById("img1").src = "image/img_" + a + ".png";
+      document.getElementById("img2").src = "image/img_" + b + ".png";
+      document.getElementById("img3").src = "image/img_" + c + ".png";
+      document.getElementById("img4").src = "image/img_" + d + ".png";
 
-            document.getElementById("img1").src = "image/img_" + a + ".png";
-            document.getElementById("img2").src = "image/img_" + b + ".png";
-            document.getElementById("img3").src = "image/img_" + c + ".png";
-            document.getElementById("img4").src = "image/img_" + d + ".png";
+      if (a == b && a ==c && a==d){
+        credit += 10
+        toastr["success"]("JACKPOT! +10 Crédits");
+      }
 
-            if (a == b && a ==c && a==d){
+      else if (a == b && a == c || b == c && b == d || c == a && c == d || d == a && d == b ) {
+        credit += 3
+        toastr["success"]("+3 Crédits - Bien joué");
+      }
 
-                credit += 10
-                toastr["success"]("JACKPOT! +10 Crédits");
-            }
-
-            else if (a == b && a == c || b == c && b == d || c == a && c == d || d == a && d == b ) {
-
-                credit += 3
-                toastr["success"]("+3 Crédits - Bien joué");
-            }
-
-            document.getElementById("credit").value = credit;
-        }, 2000);
-    }
+      document.getElementById("credit").value = credit;
+    }, 2000);
+  }
 
   else {
-
-    alert("Erreur : Nombre de crédits épuisé");
+      alert("Erreur : Nombre de crédits épuisé");
   }
 }
 
