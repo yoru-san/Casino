@@ -5,36 +5,48 @@ function machineASous(){
     if (credit > 0){
         
         credit -= 1;
+        document.getElementById("credit").value = credit;
         
         document.getElementById("boutonStart").disabled = true;
         animation();
         
-        var a = Math.floor(Math.random()*4);
-        var b = Math.floor(Math.random()*4);
-        var c = Math.floor(Math.random()*4);
-        var d = Math.floor(Math.random()*4);
-        
-        document.getElementById("img1").src = "image/img_" + a + ".png";
-        document.getElementById("img2").src = "image/img_" + b + ".png";
-        document.getElementById("img3").src = "image/img_" + c + ".png";
-        document.getElementById("img4").src = "image/img_" + d + ".png";
-        
-
-        
-        if (a == b && a ==c && a==d){
+        setTimeout(function(){
             
-            credit += 5
-        }
+            var a = Math.floor(Math.random()*4);
+            var b = Math.floor(Math.random()*4);
+            var c = Math.floor(Math.random()*4);
+            var d = Math.floor(Math.random()*4);
+
+            document.getElementById("img1").src = "image/img_" + a + ".png";
+            document.getElementById("img2").src = "image/img_" + b + ".png";
+            document.getElementById("img3").src = "image/img_" + c + ".png";
+            document.getElementById("img4").src = "image/img_" + d + ".png";
+
+
+
+            if (a == b && a ==c && a==d){
+
+                credit += 10
+            }
+            
+            else if (a == b && a == c || b == c && b == d || c == a && c == d || d == a && d == b ) {
+
+                credit += 3
+            }
+
+
+            document.getElementById("credit").value = credit;
         
-        document.getElementById("credit").value = credit;
+        }, 2000);
+        
+    
+    //document.getElementById("credit").value = prompt();
     }
     
     else {
         
         alert("Erreur : Nombre de crédits épuisé");
     }
-    
-    //document.getElementById("credit").value = prompt();
 }
 
 var isRunning = false;
