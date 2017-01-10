@@ -5,6 +5,7 @@ function machineASous(){
     if (credit > 0){
         
         credit -= 1;
+        toastr["error"]("-1 Crédit");
         document.getElementById("credit").value = credit;
         
         document.getElementById("boutonStart").disabled = true;
@@ -16,29 +17,26 @@ function machineASous(){
         var c = Math.floor(Math.random()*4);
         var d = Math.floor(Math.random()*4);
 
-        document.getElementById("img1").src = "image/img_" + a + ".png";
-        document.getElementById("img2").src = "image/img_" + b + ".png";
-        document.getElementById("img3").src = "image/img_" + c + ".png";
-        document.getElementById("img4").src = "image/img_" + d + ".png";
-
-
-
-        if (a == b && a ==c && a==d){
-
-            credit += 10
-        }
-            
-        else if (a == b && a == c || b == c && b == d || c == a && c == d || d == a && d == b ) {
-
-            credit += 3
-        }
-        
         setTimeout(function(){ //actualisation
-            document.getElementById("credit").value = credit;
+            
             document.getElementById("img1").src = "image/img_" + a + ".png";
             document.getElementById("img2").src = "image/img_" + b + ".png";
             document.getElementById("img3").src = "image/img_" + c + ".png";
             document.getElementById("img4").src = "image/img_" + d + ".png";
+            
+            if (a == b && a ==c && a==d){
+
+                credit += 10
+                toastr["success"]("JACKPOT! +10 Crédits");
+            }
+            
+            else if (a == b && a == c || b == c && b == d || c == a && c == d || d == a && d == b ) {
+
+                credit += 3
+                toastr["success"]("+3 Crédits - Bien joué");
+            }
+            
+            document.getElementById("credit").value = credit;
         }, 2000);
     }
     
