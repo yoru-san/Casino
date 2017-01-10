@@ -13,7 +13,9 @@ img
 }
 
 body {
-  background-image: url(image/casino.jpg);
+    background-image: url(image/casino.jpg);
+    background-size: 100%;
+    
 }
 
 .main {
