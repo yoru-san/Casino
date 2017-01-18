@@ -5,7 +5,7 @@ function machineASous(){
   if (credit > 0){
 
     credit -= 1;
-    toastr["error"]("-1 Crédit");
+    toastr.error("-1 Crédit");
     document.getElementById("credit").value = credit;
 
     document.getElementById("boutonStart").disabled = true;
@@ -25,12 +25,12 @@ function machineASous(){
 
       if (a == b && a ==c && a==d){
         credit += 10
-        toastr["success"]("JACKPOT! +10 Crédits");
+        toastr.success("JACKPOT! +10 Crédits", "", {timeOut: 2000});
       }
 
       else if (a == b && a == c || b == c && b == d || c == a && c == d || d == a && d == b ) {
         credit += 3
-        toastr["success"]("+3 Crédits - Bien joué");
+        toastr.success("+3 Crédits - Bien joué", "", {timeOut: 2000});
       }
 
       document.getElementById("credit").value = credit;
