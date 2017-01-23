@@ -23,12 +23,16 @@
   </div>
 
   <div class ="main" align="center">
-  <div class="carre">
-    <h1>La machine à sous !</h1>
-    <button type="button" onclick="machineASous();" id="boutonStart" class="btn btn-default">Jouer</button><br><br>
-    <p>Crédits : <input id="credit" type="text" value=20 disabled="disabled"></p>
+    <div class="gui">
+      <h1>La machine à sous !</h1>
+      <button type="button" onclick="machineASous();" id="boutonStart" class="btn btn-default">Jouer</button><br><br>
+      <p>Crédits : <input id="credit" type="text" value=20 disabled="disabled"></p>
+    </div>
+    <div class="carre">
     <img id="img1" src="image/img_3.png" /><img id="img2" src="image/img_3.png" /><img id="img3" src="image/img_3.png" /><img id="img4" src="image/img_3.png"/>
-
+    <div class="score">
+      <p>Votre score :<input id="score" type="text" value="0" disabled="disabled"></p>
+    </div>
   </div>
 </div>
 

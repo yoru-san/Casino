@@ -1,9 +1,7 @@
 function machineASous(){
 
   var credit = document.getElementById("credit").value;
-
   if (credit > 0){
-
     credit -= 1;
     toastr.error("-1 Crédit");
     document.getElementById("credit").value = credit;
@@ -16,7 +14,7 @@ function machineASous(){
     var c = Math.floor(Math.random()*4);
     var d = Math.floor(Math.random()*4);
 
-    setTimeout(function(){ //actualisation
+      setTimeout(function(){ //actualisation
 
       document.getElementById("img1").src = "image/img_" + a + ".png";
       document.getElementById("img2").src = "image/img_" + b + ".png";
@@ -24,12 +22,16 @@ function machineASous(){
       document.getElementById("img4").src = "image/img_" + d + ".png";
 
       if (a == b && a ==c && a==d){
-        credit += 10
+        credit += 10;
+        score += 1000;
+
         toastr.success("JACKPOT! +10 Crédits", "", {timeOut: 2000});
       }
 
       else if (a == b && a == c || b == c && b == d || c == a && c == d || d == a && d == b ) {
-        credit += 3
+        var score = document.getElementById("score").value;
+        credit += 3;
+        score += 300;
         toastr.success("+3 Crédits - Bien joué", "", {timeOut: 2000});
       }
 
@@ -43,7 +45,6 @@ function machineASous(){
 }
 
 function init(){
-
   var rand = Math.floor(Math.random()*4);
   console.log(rand);
 
