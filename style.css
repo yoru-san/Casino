@@ -6,37 +6,44 @@
   width: 30px;
 }
 
+#score{
+  height: 30px;
+  width: 60px;
+}
+
 img
 {
-    height: 100px;
-    width: 130px;
-    margin-top:245px;
+  height: 100px;
+  width: 130px;
+  margin-top:245px;
 }
 
 body {
-    background-image: url(image/casino.jpg);
-    background-size: 100%;
+  background-image: url(image/casino.jpg);
+  background-size: 100%;
 
 }
 
 .main {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .carre
 {
-    background-image: url(image/machine1.png);
-    background-size: 100%;
-    width: 600px;
-    height: 430px;
+  background-image: url(image/machine1.png);
+  background-size: 100%;
+  width: 600px;
+  height: 430px;
 
-    opacity: 1;
-  }
+  opacity: 1;
+}
 
 .gui {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
+  color: red;
 }
 
 .score {
   margin-top: 100px;
+  color: red;
 }

@@ -1,7 +1,7 @@
 function machineASous(){
 
   var credit = document.getElementById("credit").value;
-  var score = document.getElementById("score").value;
+  var score = Number(document.getElementById("score").value);
   if (credit > 0){
     credit -= 1;
     toastr.error("-1 Crédit");
@@ -35,7 +35,7 @@ function machineASous(){
       }
 
       document.getElementById("credit").value = credit;
-      document.getElementById("score").value = Number(score);
+      document.getElementById("score").value = score;
     }, 2000);
   }
 
