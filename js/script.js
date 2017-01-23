@@ -1,11 +1,11 @@
 function machineASous(){
 
   var credit = document.getElementById("credit").value;
+  var score = document.getElementById("score").value;
   if (credit > 0){
     credit -= 1;
     toastr.error("-1 Crédit");
     document.getElementById("credit").value = credit;
-
     document.getElementById("boutonStart").disabled = true;
     animationRoulette();
 
@@ -14,7 +14,7 @@ function machineASous(){
     var c = Math.floor(Math.random()*4);
     var d = Math.floor(Math.random()*4);
 
-      setTimeout(function(){ //actualisation
+    setTimeout(function(){ //actualisation
 
       document.getElementById("img1").src = "image/img_" + a + ".png";
       document.getElementById("img2").src = "image/img_" + b + ".png";
@@ -29,18 +29,18 @@ function machineASous(){
       }
 
       else if (a == b && a == c || b == c && b == d || c == a && c == d || d == a && d == b ) {
-        var score = document.getElementById("score").value;
         credit += 3;
         score += 300;
         toastr.success("+3 Crédits - Bien joué", "", {timeOut: 2000});
       }
 
       document.getElementById("credit").value = credit;
+      document.getElementById("score").value = Number(score);
     }, 2000);
   }
 
   else {
-      alert("Erreur : Nombre de crédits épuisé");
+    alert("Erreur : Nombre de crédits épuisé");
   }
 }
 
